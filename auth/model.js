@@ -6,7 +6,8 @@ module.exports = {
 }
 
 function add(user){
-    return db('users').insert(user, "id")
+    const [id] = db('users').insert(user, "id")
+    return findBy({id})
 }
 
 function findBy(filter){
