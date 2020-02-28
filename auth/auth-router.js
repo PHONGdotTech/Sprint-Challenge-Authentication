@@ -15,10 +15,10 @@ router.post('/register', (req, res) => {
       message: "Successfully created user.",
       id: user.id,
       username: user.username
+      })
     })
     .catch(({name, message, stack, code}) => {
       res.status(500).json({name, message, stack, code})
-    })
   })
 });
 
