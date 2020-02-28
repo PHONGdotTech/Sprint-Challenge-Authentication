@@ -5,8 +5,8 @@ module.exports = {
     findBy
 }
 
-function add(user){
-    const [id] = db('users').insert(user, "id")
+async function add(user){
+    const [id] = await db('users').insert(user, "id")
     return findBy({id})
 }
 
